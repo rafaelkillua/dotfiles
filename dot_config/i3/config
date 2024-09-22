@@ -210,10 +210,17 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
-bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
+
+# backups for dmenu
+# bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+# bindsym $mod+v exec --no-startup-id "greenclip print | grep . | dmenu -i -l 10 -p clipboard | xargs -r -d'\n' -I '{}' greenclip print '{}'"
+
+bindsym $mod+space exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+v exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
-bindsym $mod+v exec --no-startup-id "greenclip print | grep . | dmenu -i -l 10 -p clipboard | xargs -r -d'\n' -I '{}' greenclip print '{}'"
 bindsym $mod+Shift+n exec nemo
 bindsym $mod+Shift+Return exec firefox-beta
 bindsym $mod+Control+Return exec --no-startup-id code
