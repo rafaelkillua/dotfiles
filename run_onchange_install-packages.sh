@@ -24,12 +24,12 @@ if [[ "yes" == $(ask_yes_or_no "Install nvm?") ]]; then
 fi
 
 if [[ "yes" == $(ask_yes_or_no "Install base dependencies?") ]]; then
-  yay -S alacritty apulse chezmoi discord firefox-beta-bin flameshot google-chrome gparted headsetcontrol htop i3-back-bin iptvnator lightdm-settings lightdm-slick-greeter meld nemo-fileroller nextdns refind rofi rofi-greenclip scrcpy
+  yay -S --noconfirm alacritty apulse chezmoi discord firefox-beta-bin flameshot google-chrome gparted headsetcontrol htop i3-back-bin iptvnator lightdm-settings lightdm-slick-greeter meld nemo-fileroller nextdns refind rofi rofi-greenclip scrcpy
   echo 'Installed base dependencies'
 fi
 
 if [[ "yes" == $(ask_yes_or_no "Install dev dependencies?") ]]; then
-  yay -S android-sdk-build-tools android-sdk-cmdline-tools-latest android-sdk-platform-tools dbeaver docker extra/jdk21-openjdk rpi-imager visual-studio-code-bin watchman-bin
+  yay -S --noconfirm android-sdk-build-tools android-sdk-cmdline-tools-latest android-sdk-platform-tools dbeaver docker extra/jdk21-openjdk rpi-imager visual-studio-code-bin watchman-bin
   echo 'Installed dev dependencies'
 fi
 
