@@ -27,7 +27,7 @@ if [[ "yes" == $(ask_yes_or_no "Install nvm?") ]]; then
 fi
 
 if [[ "yes" == $(ask_yes_or_no "Install base dependencies?") ]]; then
-  yay -S --noconfirm alacritty apulse chezmoi discord firefox-beta-bin flameshot google-chrome gparted headsetcontrol htop i3-back-bin iptvnator lightdm-settings lightdm-slick-greeter meld nemo-fileroller nextdns refind rofi rofi-greenclip scrcpy
+  yay -S --noconfirm alacritty apulse chezmoi discord firefox-beta-bin flameshot google-chrome gparted headsetcontrol htop i3-back-bin iptvnator lightdm-settings lightdm-slick-greeter meld nemo-fileroller networkmanager nextdns refind rofi rofi-greenclip scrcpy
   echo 'Installed base dependencies'
 fi
 
