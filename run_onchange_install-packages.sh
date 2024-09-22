@@ -14,6 +14,13 @@ if ! type -P yay; then
   echo 'Installed yay'
 fi
 
+if [[ "yes" == $(ask_yes_or_no "Install nvm?") ]]; then
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+  nvm install --lts
+  nvm use --lts
+  nvm alias default node
+fi
+
 if [[ "yes" == $(ask_yes_or_no "Install base dependencies?") ]]; then
   yay -S alacritty apulse chezmoi discord firefox-beta-bin flameshot google-chrome gparted headsetcontrol htop i3-back-bin iptvnator lightdm-settings lightdm-slick-greeter meld nemo-fileroller nextdns refind rofi rofi-greenclip scrcpy
   echo 'Installed base dependencies'
