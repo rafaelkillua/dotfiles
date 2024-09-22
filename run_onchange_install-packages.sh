@@ -12,6 +12,8 @@ function ask_yes_or_no() {
 if ! type -P yay; then
   sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
   echo 'Installed yay'
+  yay --noconfirm
+  echo 'Updated system'
 fi
 
 if [[ "yes" == $(ask_yes_or_no "Install nvm?") ]]; then
@@ -21,6 +23,7 @@ if [[ "yes" == $(ask_yes_or_no "Install nvm?") ]]; then
   nvm install --lts
   nvm use --lts
   nvm alias default node
+  echo 'Installed nvm with latest lts version'
 fi
 
 if [[ "yes" == $(ask_yes_or_no "Install base dependencies?") ]]; then
