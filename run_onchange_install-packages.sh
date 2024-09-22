@@ -13,6 +13,7 @@ if ! type -P yay; then
   sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
   echo 'Installed yay'
   yay --noconfirm
+  yay -Yc --noconfirm
   echo 'Updated system'
 fi
 
@@ -27,12 +28,12 @@ if [[ "yes" == $(ask_yes_or_no "Install nvm?") ]]; then
 fi
 
 if [[ "yes" == $(ask_yes_or_no "Install base dependencies?") ]]; then
-  yay -S --noconfirm alacritty apulse chezmoi discord firefox-beta-bin flameshot google-chrome gparted headsetcontrol htop i3-back-bin iptvnator lightdm-settings lightdm-slick-greeter meld nemo-fileroller networkmanager nextdns nitrogen numlockx refind rofi rofi-greenclip scrcpy
+  yay -S --noconfirm --needed alacritty apulse chezmoi discord firefox-beta-bin flameshot google-chrome gparted headsetcontrol htop i3-back-bin iptvnator lightdm-settings lightdm-slick-greeter meld nemo-fileroller networkmanager nextdns nitrogen numlockx refind rofi rofi-greenclip scrcpy
   echo 'Installed base dependencies'
 fi
 
 if [[ "yes" == $(ask_yes_or_no "Install dev dependencies?") ]]; then
-  yay -S --noconfirm android-sdk-build-tools android-sdk-cmdline-tools-latest android-sdk-platform-tools dbeaver docker extra/jdk21-openjdk rpi-imager visual-studio-code-bin watchman-bin
+  yay -S --noconfirm --needed android-sdk-build-tools android-sdk-cmdline-tools-latest android-sdk-platform-tools dbeaver docker extra/jdk21-openjdk rpi-imager visual-studio-code-bin watchman-bin
   echo 'Installed dev dependencies'
 fi
 
