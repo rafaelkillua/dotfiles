@@ -13,9 +13,9 @@ order += "disk /"
 order += "disk /home"
 # order += "wireless _first_"
 # order += "ethernet _first_"
-# order += "battery all"
 # order += "load"
 order += "tztime local"
+order += "battery all"
 order += "volume master"
 
 cpu_usage {
@@ -45,7 +45,7 @@ ethernet _first_ {
 
 battery all {
   # format = "%status %percentage %remaining %emptytime"
-  path = "/sys/class/power_supply/hidpp_battery_%d/uevent"
+  path = "/sys/class/power_supply/BAT%d/uevent"
   format = " %status %percentage"
   format_down = "No battery"
   last_full_capacity = true
