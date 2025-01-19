@@ -35,6 +35,7 @@ fi
 
 if [[ "yes" == $(ask_yes_or_no "Install dev dependencies?") ]]; then
   yay -S --noconfirm --needed android-sdk-build-tools android-sdk-cmdline-tools-latest android-sdk-platform-tools dbeaver docker extra/jdk21-openjdk rpi-imager visual-studio-code-bin watchman-bin
+  sudo chmod -R 777 /opt/android-sdk/
   echo 'Installed dev dependencies'
 fi
 
