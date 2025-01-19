@@ -29,6 +29,7 @@ fi
 
 if [[ "yes" == $(ask_yes_or_no "Install base dependencies?") ]]; then
   yay -S --noconfirm --needed alacritty apulse chezmoi discord firefox-beta-bin flameshot google-chrome gparted headsetcontrol htop i3-back-bin iptvnator lightdm-settings lightdm-slick-greeter meld nemo-fileroller networkmanager nextdns nitrogen numlockx refind rofi rofi-greenclip scrcpy pwvucontrol
+  refind-install
   echo 'Installed base dependencies'
 fi
 
@@ -37,4 +38,28 @@ if [[ "yes" == $(ask_yes_or_no "Install dev dependencies?") ]]; then
   echo 'Installed dev dependencies'
 fi
 
-
+{{- if .isVM }}
+if [[ "yes" == $(ask_yes_or_no "Config VM? (XRDP mainly)") ]]; then
+  yay -S --noconfirm --needed xrdp xorgxrdp hyperv
+  # Config xrdp and xrdpxorg
+  sudo sed -i 's/^EnableUserWindowManager=true/EnableUserWindowManager=false/' /etc/xrdp/sesman.ini
+  sudo sed -i "s/username=rafaelkillua/username=$USER/" /etc/xrdp/xrdp.ini
+  # Fix broken Hyper-V dependencies
+  git clone git@github.com:Microsoft/linux-vm-tools.git
+  sudo ./linux-vm-tools/arch/install-config.sh
+  rm -rf linux-vm-tools
+  curl https://raw.githubusercontent.com/torvalds/linux/master/tools/hv/hv_get_dhcp_info.sh -o hv_get_dhcp_info
+  curl https://raw.githubusercontent.com/torvalds/linux/master/tools/hv/hv_get_dns_info.sh -o hv_get_dns_info
+  sudo mkdir /usr/libexec/hypervkvpd -p
+  sudo mv hv_get_dhcp_info /usr/libexec/hypervkvpd/
+  sudo mv hv_get_dns_info /usr/libexec/hypervkvpd/
+  sudo chmod +x /usr/libexec/hypervkvpd/hv_get_dhcp_info
+  sudo chmod +x /usr/libexec/hypervkvpd/hv_get_dns_info
+  # Init Hyper-V services
+  sudo systemctl enable --now hv_kvp_daemon
+  sudo systemctl enable --now hv_vss_daemon
+  # Init xrdp service
+  sudo systemctl enable --now xrdp.service
+  echo 'Installed VM dependencies and configured services'
+fi
+{{- end }}
