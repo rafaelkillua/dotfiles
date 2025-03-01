@@ -236,4 +236,5 @@ mouse_warping none
 exec --no-startup-id numlockx on
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id greenclip daemon
+exec --no-startup-id filen-desktop
 # exec_always --no-startup-id easyeffects --gapplication-service
