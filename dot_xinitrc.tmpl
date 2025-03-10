@@ -15,8 +15,6 @@ if [ -d "$xinitdir" ]; then
   done
 fi
 
-{{ if .isVM }}
-# VM
 for file in "/etc/X11/Xresources" "$HOME/.Xresources"; do
   if [ -f "$file" ]; then
     echo "Loading resource: $file"
@@ -31,6 +29,9 @@ for file in "/etc/X11/Xkbmap" "$HOME/.Xkbmap"; do
   fi
 done
 
+
+{{ if .isVM }}
+# VM
 exec i3
 
 {{- else }}
