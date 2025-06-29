@@ -126,5 +126,8 @@ SPACESHIP_VENV_COLOR=green
 # Put color in ls
 alias ls="ls --color"
 
+# Login afindbar ssh
+alias afindbar="cd ~/Downloads && ssh -i afindbar.pem ubuntu@155.248.229.21"
+
 # Load nvm version if directory has .nvmrc
 [ -f ./.nvmrc ] && nvm use
