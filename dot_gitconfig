@@ -2,7 +2,7 @@
 	autoSetupRemote = true
 [user]
 	name = Rafael Sampaio Tavares
-	email = me@rafaelst.dev
+	email = rafa@rafaelst.dev
 [init]
 	defaultBranch = main
 [pull]

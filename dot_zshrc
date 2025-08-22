@@ -135,3 +135,13 @@ alias tail_uni="sudo tailscale switch uni.mktdigital@gmail.com"
 
 # Load nvm version if directory has .nvmrc
 [ -f ./.nvmrc ] && nvm use
+
+# bun completions
+[ -s "/home/rafaelkillua/.bun/_bun" ] && source "/home/rafaelkillua/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias start_emulator="/opt/android-sdk/emulator/emulator -avd Android35 -gpu host &"
+alias start_emulator16="/opt/android-sdk/emulator/emulator -avd Android35_16kb -gpu host &"
