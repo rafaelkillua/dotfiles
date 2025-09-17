@@ -235,7 +235,6 @@ focus_follows_mouse no
 mouse_warping none
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 exec --no-startup-id numlockx on
+exec --no-startup-id setxkbmap us -variant intl
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id greenclip daemon
-# exec --no-startup-id filen-desktop
-# exec_always --no-startup-id easyeffects --gapplication-service

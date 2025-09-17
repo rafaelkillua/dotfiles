@@ -129,9 +129,8 @@ alias ls="ls --color"
 # Login afindbar ssh
 alias afindbar="cd ~/Downloads && ssh -i afindbar.pem ubuntu@155.248.229.21"
 
-# change tailscales
-alias tail_rafa="sudo tailscale switch rafael.sam.bs@gmail.com"
-alias tail_uni="sudo tailscale switch uni.mktdigital@gmail.com"
+# Login firstnucserver ssh
+alias firstnucserver="ssh 192.168.0.170"
 
 # Load nvm version if directory has .nvmrc
 [ -f ./.nvmrc ] && nvm use
