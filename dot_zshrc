@@ -130,7 +130,7 @@ alias ls="ls --color"
 alias afindbar="cd ~/Downloads && ssh -i afindbar.pem ubuntu@155.248.229.21"
 
 # Login firstnucserver ssh
-alias firstnucserver="ssh 192.168.0.170"
+alias firstnucserver="ssh firstnucserver.lan"
 
 # Load nvm version if directory has .nvmrc
 [ -f ./.nvmrc ] && nvm use

@@ -237,5 +237,5 @@ exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 exec --no-startup-id numlockx on
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id greenclip daemon
-exec_always --no-startup-id setxkbmap us -variant intl
+exec_always --no-startup-id "setxkbmap us -variant intl"
 exec_always --no-startup-id "echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode"
