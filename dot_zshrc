@@ -142,5 +142,8 @@ alias firstnucserver="ssh firstnucserver.lan"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-alias start_emulator="/opt/android-sdk/emulator/emulator -avd Android35 -gpu host &"
-alias start_emulator16="/opt/android-sdk/emulator/emulator -avd Android35_16kb -gpu host &"
+# Android related
+export ANDROID_SDK_ROOT="/home/rafaelkillua/Applications/android-sdk"
+export ANDROID_HOME="/home/rafaelkillua/Applications/android-sdk"
+alias start_emulator="$ANDROID_SDK_ROOT/emulator/emulator -avd Android35 -gpu host &"
+alias start_emulator16="$ANDROID_SDK_ROOT/emulator/emulator -avd Android35_16kb -gpu host &"
